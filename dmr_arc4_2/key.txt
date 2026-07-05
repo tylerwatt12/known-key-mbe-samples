@@ -1,0 +1,4 @@
+protocol=DMR
+algorithm=ARC4
+algid=0x21
+key_hex=CDEFAB1234

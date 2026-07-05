@@ -1,0 +1,4 @@
+protocol=DMR
+algorithm=AES128
+algid=0x24
+key_hex=0000000000000000BCDEFA1234567890

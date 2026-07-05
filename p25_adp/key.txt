@@ -1,0 +1,4 @@
+protocol=P25
+algorithm=ADP_RC4
+algid=0xAA
+key_hex=deadbeef69

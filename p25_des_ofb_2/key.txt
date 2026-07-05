@@ -1,0 +1,5 @@
+protocol=P25
+algorithm=DES-OFB
+algid=0x81
+key_id=0x4102
+key_hex=687923678062F22C

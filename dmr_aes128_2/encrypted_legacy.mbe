@@ -116,9 +116,6 @@
     "time" : 1782967655388,
     "hex" : "D68D8B8387D9407247"
   }, {
-    "encryption_algorithm" : 36,
-    "encryption_key_id" : 2,
-    "encryption_mi" : "C840C1AA",
     "time" : 1782967655407,
     "hex" : "2B595D5BE95C4565BC"
   }, {
@@ -173,9 +170,6 @@
     "time" : 1782967655746,
     "hex" : "C22F8AB0675CF3CF97"
   }, {
-    "encryption_algorithm" : 36,
-    "encryption_key_id" : 2,
-    "encryption_mi" : "62B33B5B",
     "time" : 1782967655766,
     "hex" : "B610D3BD7E764006E1"
   }, {
@@ -230,9 +224,6 @@
     "time" : 1782967656106,
     "hex" : "7310FCC5F35A8F2BC5"
   }, {
-    "encryption_algorithm" : 36,
-    "encryption_key_id" : 2,
-    "encryption_mi" : "887EAA95",
     "time" : 1782967656126,
     "hex" : "7418BF11D1161F3313"
   }, {
@@ -287,9 +278,6 @@
     "time" : 1782967656467,
     "hex" : "4902FBC70A457A6400"
   }, {
-    "encryption_algorithm" : 36,
-    "encryption_key_id" : 2,
-    "encryption_mi" : "F51D2701",
     "time" : 1782967656487,
     "hex" : "5D0495BB14E1942F1C"
   }, {
@@ -344,9 +332,6 @@
     "time" : 1782967656826,
     "hex" : "96F644044CCCE7220C"
   }, {
-    "encryption_algorithm" : 36,
-    "encryption_key_id" : 2,
-    "encryption_mi" : "6CDAEE2E",
     "time" : 1782967656847,
     "hex" : "5F56D7F4C6FCADBA71"
   }, {
@@ -401,9 +386,6 @@
     "time" : 1782967657186,
     "hex" : "575BCBC734438DC833"
   }, {
-    "encryption_algorithm" : 36,
-    "encryption_key_id" : 2,
-    "encryption_mi" : "DF35C718",
     "time" : 1782967657207,
     "hex" : "F31775BA85A38D6800"
   }, {
@@ -458,9 +440,6 @@
     "time" : 1782967657547,
     "hex" : "F2EAF7D476C816406F"
   }, {
-    "encryption_algorithm" : 36,
-    "encryption_key_id" : 2,
-    "encryption_mi" : "0D8CE988",
     "time" : 1782967657567,
     "hex" : "1FA47D5BEE6EC34166"
   }, {
@@ -515,9 +494,6 @@
     "time" : 1782967657907,
     "hex" : "25324B9092761EC2B1"
   }, {
-    "encryption_algorithm" : 36,
-    "encryption_key_id" : 2,
-    "encryption_mi" : "258E61A5",
     "time" : 1782967657927,
     "hex" : "146D4D5A03ECB127A3"
   }, {
@@ -572,9 +548,6 @@
     "time" : 1782967658267,
     "hex" : "4FE00FF077E1A79A53"
   }, {
-    "encryption_algorithm" : 36,
-    "encryption_key_id" : 2,
-    "encryption_mi" : "A6D64425",
     "time" : 1782967658288,
     "hex" : "5ABAC049C1A4F487A4"
   }, {
@@ -629,9 +602,6 @@
     "time" : 1782967658627,
     "hex" : "F89B78546F83C941A2"
   }, {
-    "encryption_algorithm" : 36,
-    "encryption_key_id" : 2,
-    "encryption_mi" : "24B3C0F2",
     "time" : 1782967658647,
     "hex" : "258F0E89AD3B9FDE1A"
   }, {
@@ -686,9 +656,6 @@
     "time" : 1782967658988,
     "hex" : "47DEA117BD5C4C74E5"
   }, {
-    "encryption_algorithm" : 36,
-    "encryption_key_id" : 2,
-    "encryption_mi" : "54F6D781",
     "time" : 1782967659007,
     "hex" : "57439A33375F7DC596"
   }, {
@@ -743,9 +710,6 @@
     "time" : 1782967659347,
     "hex" : "B77C504996C1D9311B"
   }, {
-    "encryption_algorithm" : 36,
-    "encryption_key_id" : 2,
-    "encryption_mi" : "64E0AEC3",
     "time" : 1782967659368,
     "hex" : "6B3C91857D5A78A1DB"
   }, {
@@ -800,9 +764,6 @@
     "time" : 1782967659707,
     "hex" : "BE0ABFAD7FDCF86838"
   }, {
-    "encryption_algorithm" : 36,
-    "encryption_key_id" : 2,
-    "encryption_mi" : "E8795A83",
     "time" : 1782967659727,
     "hex" : "D35B1CF61E2837E7BE"
   }, {
@@ -857,9 +818,6 @@
     "time" : 1782967660067,
     "hex" : "D9B0058D9078586DE4"
   }, {
-    "encryption_algorithm" : 36,
-    "encryption_key_id" : 2,
-    "encryption_mi" : "677472C8",
     "time" : 1782967660086,
     "hex" : "951AD2C5D88897575F"
   }, {
@@ -914,9 +872,6 @@
     "time" : 1782967660443,
     "hex" : "BDFB6CF8DD59580A13"
   }, {
-    "encryption_algorithm" : 36,
-    "encryption_key_id" : 2,
-    "encryption_mi" : "F392AC05",
     "time" : 1782967660447,
     "hex" : "713D11B99D7FBA0E90"
   }, {

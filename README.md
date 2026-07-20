@@ -132,17 +132,6 @@ context because the original `.mbe` files did not retain the PI header.
 
 The DMR `hex` value is the SDRTrunk `.mbe` voice-frame payload shape expected by SDRTrunk/JMBE tooling. Consumers should decode the hex string into bytes, apply the appropriate decryptor for the sample, then pass the resulting 9-byte frames through the same DMR AMBE+2 decode path used for unencrypted `.mbe` playback.
 
-### DMR FID
-
-The DMR Feature Identifier (FID) is an 8-bit signaling value that identifies the standard or manufacturer-specific
-interpretation of a link-control feature. It is not an encryption key or IV. A FID can help a decoder distinguish a
-standard DMRA encryption mode from a vendor-specific privacy implementation.
-
-These sample files do not contain a FID. The original SDRTrunk `.mbe` export retained the AMBE+2 frames but not the PI
-header carrying the FID, so it cannot be recovered faithfully after the fact and must not be inferred merely from the
-radio manufacturer. A future optional `encryption_fid` field would be an additive version-2 extension; it would not by
-itself require a version-3 container.
-
 ## Key Files
 
 Each `key.txt` uses simple `name=value` lines:

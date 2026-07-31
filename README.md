@@ -1,6 +1,6 @@
 # Known-Key MBE Samples
 
-This repository contains known-key encrypted MBE voice samples for testing P25 and DMR decryptors.
+This repository contains known-key encrypted MBE voice samples for testing P25, DMR, and NXDN decryptors.
 
 Each sample directory contains:
 
@@ -12,11 +12,13 @@ Each sample directory contains:
 
 The samples are intended for decryptor validation only. They are not raw RF captures and do not include receiver frequency, tuner, site frequency, or channel-frequency metadata.
 
-Sample radio provenance:
+Sample provenance:
 
 - DMR ARC4, AES-128, and AES-256: Baofeng DM-32.
 - P25 ADP / RC4: Motorola APX1000.
 - P25 DES-OFB and AES-256: Harris XG-100P.
+- NXDN scrambler, DES-OFB, and AES-256: standards-derived EHR conformance vectors from NXDN TS 1-D Security
+  Ver.1.3, sections 7.2.1.1 through 7.2.1.3 and 7.2.3. The expected audio is the published 1031 Hz tone.
 
 ## Directory Layout
 
@@ -28,6 +30,9 @@ Current sample families:
 - `dmr_arc4_*` - DMRA ARC4 / Enhanced Privacy sample, ALGID `0x21`
 - `dmr_aes128_*` - DMR AES-128 sample, ALGID `0x24`
 - `dmr_aes256_*` - DMR AES-256 sample, ALGID `0x25`
+- `nxdn_scrambler_*` - NXDN EHR scrambler sample, cipher type `0x01`
+- `nxdn_des_ofb_*` - NXDN EHR DES-OFB sample, cipher type `0x02`
+- `nxdn_aes256_*` - NXDN EHR AES-256/OFB sample, cipher type `0x03`
 
 ## `.mbe` File Encoding
 
@@ -49,9 +54,10 @@ Top-level fields:
 
 Common fields:
 
-- `protocol` - `APCO25-PHASE1` or `DMR`.
+- `protocol` - `APCO25-PHASE1`, `DMR`, or `NXDN`.
 - `version` - JSON container/schema version. This is not a vocoder version.
-- `call_type` - call type when known, usually `GROUP`.
+- `codec` - optional vocoder rate/format metadata. The NXDN samples use `HALF_RATE`.
+- `call_type` - call type when known, usually `GROUP`; the NXDN fixtures use `GROUP CONFERENCE`.
 - `from` / `to` - source and destination IDs as recorder/exporter strings.
 - `encrypted` - whether the captured voice frames were encrypted.
 - `system` / `site` - optional sanitized labels from the recorder/exporter.
@@ -132,6 +138,43 @@ context because the original `.mbe` files did not retain the PI header.
 
 The DMR `hex` value is the SDRTrunk `.mbe` voice-frame payload shape expected by SDRTrunk/JMBE tooling. Consumers should decode the hex string into bytes, apply the appropriate decryptor for the sample, then pass the resulting 9-byte frames through the same DMR AMBE+2 decode path used for unencrypted `.mbe` playback.
 
+## NXDN Frame Encoding
+
+NXDN samples use one JSON frame per 20 ms EHR AMBE+2 voice frame. Each frame contains 9 bytes of transmitted voice
+and error-correction data, hex-encoded as 18 hex characters. The first voice frame from each NXDN RF frame also carries
+its SACCH position tag:
+
+```json
+{
+  "tag" : "SACCH 1",
+  "encryption_algorithm" : 3,
+  "encryption_key_id" : 1,
+  "encryption_mi" : "ABCDEF1234567890",
+  "time" : 1783112645715,
+  "hex" : "BD4503BDC7F187AF31"
+}
+```
+
+NXDN frame fields:
+
+- `tag` - optional `SACCH 1` through `SACCH 4` position marker on the first of four AMBE+2 frames in an RF frame.
+- `encryption_algorithm` - decimal cipher type (`1` / `0x01` scrambler, `2` / `0x02` DES-OFB, or `3` / `0x03`
+  AES-256/OFB).
+- `encryption_key_id` - transmitted key selector. These fixtures use key ID `1`, matching `key.txt`.
+- `encryption_mi` - transmitted 64-bit initialization vector for DES-OFB and AES-256/OFB. The AES decryptor derives
+  the corresponding 128-bit IV according to NXDN TS 1-D. The scrambler does not use an IV.
+- `time` - recorder timestamp in milliseconds since Unix epoch.
+- `hex` - 9 bytes of encrypted NXDN EHR AMBE+2 frame data, hex-encoded as 18 hex characters.
+
+An encryption-context marker applies to that frame and subsequent frames until another marker appears. Metadata is not
+repeated on every frame. The scrambler fixture contains four repetitions of the published 16-frame superframe to verify
+the specified keystream reset. The DES-OFB and AES-256/OFB fixtures each contain the published 32-frame, two-superframe
+session.
+
+These NXDN fixtures are derived from published conformance vectors and are not over-the-air captures. Consumers should
+decode the hex string into bytes, apply the matching decryptor from `key.txt`, and pass the resulting 9-byte frames
+through the same NXDN EHR AMBE+2 decode path used for unencrypted `.mbe` playback.
+
 ## Key Files
 
 Each `key.txt` uses simple `name=value` lines:
@@ -146,7 +189,7 @@ key_hex=deadbeef69
 
 Fields:
 
-- `protocol` - `P25` or `DMR`.
+- `protocol` - `P25`, `DMR`, or `NXDN`.
 - `algorithm` - human-readable algorithm name.
 - `algid` - algorithm ID in hex.
 - `key_id` - optional key selector used to resolve the matching key. For the DMR fixtures, see the qualification in the
@@ -161,3 +204,5 @@ A decryptor should be considered compatible with a sample when:
 2. It uses the matching `key.txt`.
 3. It decrypts the frame payloads without changing their frame ordering.
 4. It produces decoded audio matching the intelligible audio in `expected.wav`.
+
+For the NXDN conformance fixtures, every decrypted frame represents the published 1031 Hz EHR tone pattern.

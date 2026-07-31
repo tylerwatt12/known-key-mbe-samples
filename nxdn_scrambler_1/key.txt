@@ -1,0 +1,5 @@
+protocol=NXDN
+algorithm=SCRAMBLER
+algid=0x01
+key_id=0x0001
+key_hex=0001

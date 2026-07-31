@@ -1,0 +1,117 @@
+{
+  "protocol" : "NXDN",
+  "version" : 2,
+  "codec" : "HALF_RATE",
+  "call_type" : "GROUP CONFERENCE",
+  "from" : "1",
+  "to" : "100",
+  "encrypted" : true,
+  "frames" : [ {
+    "tag" : "SACCH 1",
+    "encryption_algorithm" : 3,
+    "encryption_key_id" : 1,
+    "encryption_mi" : "ABCDEF1234567890",
+    "time" : 1783112645715,
+    "hex" : "BD4503BDC7F187AF31"
+  }, {
+    "time" : 1783112645735,
+    "hex" : "72FFC7506DB58330D0"
+  }, {
+    "time" : 1783112645755,
+    "hex" : "5C0BC6F1471DDE572B"
+  }, {
+    "time" : 1783112645775,
+    "hex" : "17D7202AF5EA342472"
+  }, {
+    "tag" : "SACCH 2",
+    "time" : 1783112645795,
+    "hex" : "4AEF6528DA8145E9BD"
+  }, {
+    "time" : 1783112645815,
+    "hex" : "916D09EC70C2D7E5FC"
+  }, {
+    "time" : 1783112645835,
+    "hex" : "15A25D968FD1A7F14E"
+  }, {
+    "time" : 1783112645855,
+    "hex" : "DB6E471655BBA93502"
+  }, {
+    "tag" : "SACCH 3",
+    "time" : 1783112645875,
+    "hex" : "6579296763DCF3F8CD"
+  }, {
+    "time" : 1783112645895,
+    "hex" : "4E97E1AB77B9C8E5C8"
+  }, {
+    "time" : 1783112645915,
+    "hex" : "A1390C285695DB3667"
+  }, {
+    "time" : 1783112645935,
+    "hex" : "BBAE0D4F69A2FC8AFF"
+  }, {
+    "tag" : "SACCH 4",
+    "time" : 1783112645955,
+    "hex" : "2D60701DF171C735B7"
+  }, {
+    "time" : 1783112645975,
+    "hex" : "F40E8FB1BB3F9A558D"
+  }, {
+    "time" : 1783112645995,
+    "hex" : "7485751FE484A653BB"
+  }, {
+    "time" : 1783112646015,
+    "hex" : "644E705B916A310BCF"
+  }, {
+    "tag" : "SACCH 1",
+    "time" : 1783112646035,
+    "hex" : "50DD37B40C5EBD3638"
+  }, {
+    "time" : 1783112646055,
+    "hex" : "6CB7C18B179DB8F2CB"
+  }, {
+    "time" : 1783112646075,
+    "hex" : "49245FCEB8D050735F"
+  }, {
+    "time" : 1783112646095,
+    "hex" : "7E2D9F89A6ED1FA25F"
+  }, {
+    "tag" : "SACCH 2",
+    "time" : 1783112646115,
+    "hex" : "E894C53A4D7B5AFBBF"
+  }, {
+    "time" : 1783112646135,
+    "hex" : "2CB7A7B4B827B6BD42"
+  }, {
+    "time" : 1783112646155,
+    "hex" : "D1F438BC58B930432B"
+  }, {
+    "time" : 1783112646175,
+    "hex" : "664A0B0155CBE78BBC"
+  }, {
+    "tag" : "SACCH 3",
+    "time" : 1783112646195,
+    "hex" : "C683C9BAE6002F0D04"
+  }, {
+    "time" : 1783112646215,
+    "hex" : "E8D8D9ACDA07ADE722"
+  }, {
+    "time" : 1783112646235,
+    "hex" : "79B5E87D9E41418C13"
+  }, {
+    "time" : 1783112646255,
+    "hex" : "E220F3E27131907C6B"
+  }, {
+    "tag" : "SACCH 4",
+    "time" : 1783112646275,
+    "hex" : "2948D6C1C2EFA230C0"
+  }, {
+    "time" : 1783112646295,
+    "hex" : "73B3D3BCFA3E3BB0C7"
+  }, {
+    "time" : 1783112646315,
+    "hex" : "00D78E91160FD8FA75"
+  }, {
+    "time" : 1783112646335,
+    "hex" : "0FA9A6E8D5160D1F3C"
+  } ]
+}

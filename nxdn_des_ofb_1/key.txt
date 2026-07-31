@@ -1,0 +1,5 @@
+protocol=NXDN
+algorithm=DES-OFB
+algid=0x02
+key_id=0x0001
+key_hex=ABCDEF0123456789
